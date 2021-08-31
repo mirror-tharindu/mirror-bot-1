@@ -37,10 +37,10 @@ def stats(update, context):
     disk = psutil.disk_usage('/').percent
     stats = f'<b>Bot Uptime:</b> {currentTime}\n' \
             f'<b>Start Time:</b> {current}\n' \
-            f'<b>Total Disk Space:</b> {total}\n' \
+            f'<b>Total Disk Space ♴:</b> {total}\n' \
             f'<b>Used:</b> {used}  ' \
             f'<b>Free:</b> {free}\n\n' \
-            f'📊Data Usage📊\n<b>Upload:</b> {sent}\n' \
+            f'Data Usage ⚠️:\n<b>Upload:</b> {sent}\n' \
             f'<b>Download:</b> {recv}\n\n' \
             f'<b>CPU:</b> {cpuUsage}%\n' \
             f'<b>RAM:</b> {memory}%\n' \
@@ -50,25 +50,25 @@ def stats(update, context):
 
 def start(update, context):
     start_string = f'''
-මගෙන් ඕනම ෆයිල් එකක් කෙලින්ම ගූගල් Drive එකට දාගන්න පුළුවන් 😍❤️
+𝗛𝗶....𝐈 𝐜𝐚𝐧 𝐔𝐩𝐥𝐨𝐚𝐝 𝐀𝐧𝐲 𝐓𝐨𝐫𝐫𝐞𝐧𝐭,𝐌𝐚𝐠𝐧𝐞𝐭 𝐋𝐢𝐧𝐤 𝐨𝐫 𝐀𝐧𝐲 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐚𝐛𝐥𝐞 𝐋𝐢𝐧𝐤 𝐭𝐨 𝐆𝐨𝐨𝐠𝐥𝐞 𝐃𝐫𝐢𝐯𝐞 🖤🍂...𝐀 𝐏𝐫𝐨𝐣𝐞𝐜𝐭 𝐁𝐲 𝐑𝐚𝐯𝐢𝐧𝐝𝐮 𝐃𝐞𝐬𝐡𝐚𝐧🍂
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("මගෙ Owner ❤️", "https://t.me/Ravindu_Deshanz")
+    buttons.buildbutton("𝙼𝚢 𝙾𝚠𝚗𝚎𝚛 🖤", "https://t.me/Ravindu_Deshanz")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     LOGGER.info('UID: {} - UN: {} - MSG: {}'.format(update.message.chat.id, update.message.chat.username, update.message.text))
     uptime = get_readable_time((time.time() - botStartTime))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         if update.message.chat.type == "private" :
-            sendMessage(f"ආ කෝමද😊...මම ඇහැරලා ඉන්නේ 🥰❤️\nSince: <code>{uptime}</code>", context.bot, update)
+            sendMessage(f"𝐇𝐢 𝐓𝐡𝐞𝐫𝐞 🌟...𝐈'𝐦 𝐒𝐭𝐢𝐥𝐥 𝐀𝐥𝐢𝐯𝐞 🖤\nSince: <code>{uptime}</code>", context.bot, update)
         else :
             update.effective_message.reply_photo(IMAGE_URL, start_string, parse_mode=ParseMode.MARKDOWN, reply_markup=reply_markup)
     else :
-        sendMessage(f"ප්‍රයිවෙට් මැසේජ් දාන්න අවසර නෑ බුංගා ඔයාට 😾😾..අපේ ගෲපට වරෙම් මාව යූස් කරන්න පම්කයා 😾❤️", context.bot, update)
+        sendMessage(f"𝗪𝗮𝗿𝗻𝗶𝗻𝗴 ⚠️...𝗬𝗼𝘂 𝗖𝗮𝗻𝘁 𝗔𝗰𝗰𝗲𝘀𝘀 𝗺𝗲 ⚠️ ...𝗝𝗼𝗶𝗻 𝗢𝘂𝗿 𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝗚𝗿𝗼𝘂𝗽 𝘁𝗼 𝗨𝘀𝗲 𝗺𝗲 🍂", context.bot, update)
 
 
 def restart(update, context):
-    restart_message = sendMessage("රීස්ටාට් වෙන ගමන් ඉන්නේ 😍", context.bot, update)
+    restart_message = sendMessage("𝙍𝙚𝙨𝙩𝙖𝙧𝙩𝙞𝙣𝙜 ⚒⚠️", context.bot, update)
     # Save restart message object in order to reply to it after restarting
     with open(".restartmsg", "w") as f:
         f.truncate(0)
@@ -208,7 +208,7 @@ def main():
     if os.path.isfile(".restartmsg"):
         with open(".restartmsg") as f:
             chat_id, msg_id = map(int, f)
-        bot.edit_message_text("රීස්ටාට් උනා බන් 😌", chat_id, msg_id)
+        bot.edit_message_text("𝗥𝗲𝘀𝘁𝗮𝗿𝘁 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹 🌟..𝗡𝗼𝘄 𝗬𝗼𝘂 𝗖𝗮𝗻 𝘂𝘀𝗲 𝗠𝗲 🍂⚒.. 𝗠𝗮𝗶𝗻𝘁𝗲𝗻𝗮𝗻𝗰𝗲 𝗕𝘆 𝗥𝗮𝘃𝗶𝗻𝗱𝘂 𝗗𝗲𝘀𝗵𝗮𝗻 🖤", chat_id, msg_id)
         os.remove(".restartmsg")
     bot.set_my_commands(botcmds)
 
