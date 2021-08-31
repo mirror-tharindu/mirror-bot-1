@@ -158,9 +158,9 @@ class MirrorListener(listeners.MirrorListeners):
             buttons = button_build.ButtonMaker()
             if SHORTENER is not None and SHORTENER_API is not None:
                 surl = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={link}&format=text').text
-                buttons.buildbutton("☁️ Drive Link", surl)
+                buttons.buildbutton("☁️ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤 ☁️", surl)
             else:
-                buttons.buildbutton("☁️ Drive Link", link)
+                buttons.buildbutton("☁️ 𝐃𝐫𝐢𝐯𝐞 𝐋𝐢𝐧𝐤 ☁️", link)
             LOGGER.info(f'Done Uploading {download_dict[self.uid].name()}')
             if INDEX_URL is not None:
                 url_path = requests.utils.quote(f'{download_dict[self.uid].name()}')
@@ -169,19 +169,19 @@ class MirrorListener(listeners.MirrorListeners):
                     share_url += '/'
                     if SHORTENER is not None and SHORTENER_API is not None:
                         siurl = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={share_url}&format=text').text
-                        buttons.buildbutton("⚡ Index Link", siurl)
+                        buttons.buildbutton("⚡ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤 ⚡", siurl)
                     else:
-                        buttons.buildbutton("⚡ Index Link", share_url)
+                        buttons.buildbutton("⚡ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤 ⚡", share_url)
                 else:
                     share_urls = f'{INDEX_URL}/{url_path}?a=view'
                     if SHORTENER is not None and SHORTENER_API is not None:
                         siurl = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={share_url}&format=text').text
                         siurls = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={share_urls}&format=text').text
-                        buttons.buildbutton("⚡ Index Link", siurl)
+                        buttons.buildbutton("⚡ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤 ⚡", siurl)
                         if VIEW_LINK:
                             buttons.buildbutton("🌐 View Link", siurls)
                     else:
-                        buttons.buildbutton("⚡ Index Link", share_url)
+                        buttons.buildbutton("⚡ 𝐈𝐧𝐝𝐞𝐱 𝐋𝐢𝐧𝐤 ⚡", share_url)
                         if VIEW_LINK:
                             buttons.buildbutton("🌐 View Link", share_urls)
             if BUTTON_FOUR_NAME is not None and BUTTON_FOUR_URL is not None:
@@ -281,7 +281,7 @@ def _mirror(bot, update, isTar=False, extract=False):
     else:
         tag = None
     if not bot_utils.is_url(link) and not bot_utils.is_magnet(link):
-        sendMessage('No download source provided', bot, update)
+        sendMessage('𝗣𝗹𝗲𝗮𝘀𝗲 𝗥𝗲𝗽𝗹𝘆 𝘁𝗼 𝗔 𝗧𝗼𝗿𝗿𝗲𝗻𝘁 𝗙𝗶𝗹𝗲 𝗼𝗿 𝗧𝘆𝗽𝗲 /𝗺𝗶𝗿𝗿𝗼𝗿 𝗕𝗲𝗳𝗼𝗿𝗲 𝗦𝗲𝗻𝗱𝗶𝗻𝗴 𝗔 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗨𝗥𝗟 ⚠️', bot, update)
         return
 
     try:
