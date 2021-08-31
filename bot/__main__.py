@@ -54,7 +54,7 @@ def start(update, context):
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("මගෙ Owner 🥰❤️", "https://t.me/Ravindu_Deshanz")
+    buttons.buildbutton("මගෙ Owner ❤️", "https://t.me/Ravindu_Deshanz")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     LOGGER.info('UID: {} - UN: {} - MSG: {}'.format(update.message.chat.id, update.message.chat.username, update.message.text))
     uptime = get_readable_time((time.time() - botStartTime))
