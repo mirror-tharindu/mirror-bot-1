@@ -14,8 +14,8 @@ URL_REGEX = r"(?:(?:https?|ftp):\/\/)?[\w/\-?=%.]+\.[\w/\-?=%.]+"
 
 
 class MirrorStatus:
-    STATUS_UPLOADING = "Uploading...📤"
-    STATUS_DOWNLOADING = "Downloading...📥"
+    STATUS_UPLOADING = "ᴜᴘʟᴏᴀᴅɪɴɢ...📤"
+    STATUS_DOWNLOADING = "ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ...📥"
     STATUS_WAITING = "Queued...📝"
     STATUS_FAILED = "Failed 🚫. Cleaning Download..."
     STATUS_ARCHIVING = "Archiving...🔐"
@@ -104,18 +104,18 @@ def get_readable_message():
             if download.status() != MirrorStatus.STATUS_ARCHIVING and download.status() != MirrorStatus.STATUS_EXTRACTING:
                 msg += f"\n<code>{get_progress_bar_string(download)} {download.progress()}</code>"
                 if download.status() == MirrorStatus.STATUS_DOWNLOADING:
-                    msg += f"\n<b>😻Downloaded:</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
+                    msg += f"\n<b>⏳ Pʀᴏɢʀᴇss::</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
                 else:
                     msg += f"\n<b>Uploaded:</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
-                msg += f"\n<b>⚡️Speed:</b> {download.speed()}\n<b>⏱ETA:</b> {download.eta()} "
+                msg += f"\n<b>✈️ Sᴘᴇᴇᴅ</b> {download.speed()}\n<b>🕰️ ᴇᴛᴀ:</b> {download.eta()} "
                 # if hasattr(download, 'is_torrent'):
                 try:
-                    msg += f"\n<b>🌾Seeders:</b> {download.aria_download().num_seeders}" \
-                        f" | <b>🥀Peers:</b> {download.aria_download().connections}"
+                    msg += f"\n<b>🍔 Sᴇᴇᴅᴇʀs:</b> {download.aria_download().num_seeders}" \
+                        f" | <b>🍕 Pᴇᴇʀs:</b> {download.aria_download().connections}"
                 except:
                     pass
             if download.status() == MirrorStatus.STATUS_DOWNLOADING:
-                msg += f"\n<b>To Stop🚫:</b> <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
+                msg += f"\n<b>Tᴏ Cᴀɴᴄᴇʟ 🚫:</b> <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
             msg += "\n\n"
         return msg
 
