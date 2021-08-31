@@ -1,4 +1,4 @@
-[![Slam](https://imagetot.com/images/2021/06/28/e8155fe3d87a1084d7cda5f4ecc5211c.jpg)](https://telegram.dog/cloudsmirror)
+[![Slam](https://1.ravindu-mirror.workers.dev/0://photo_2021-08-31_18-15-24.jpg)](https://telegram.dog/cloudsmirror)
 
 # Deepak Clouds Mirror
 ![GitHub Repo stars](https://img.shields.io/github/stars/blackdeep04/deepak-clouds-mirror?color=blue&style=flat)
