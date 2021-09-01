@@ -50,11 +50,11 @@ def stats(update, context):
 
 def start(update, context):
     start_string = f'''
-𝗛𝗶....𝐈 𝐜𝐚𝐧 𝐔𝐩𝐥𝐨𝐚𝐝 𝐀𝐧𝐲 𝐓𝐨𝐫𝐫𝐞𝐧𝐭,𝐌𝐚𝐠𝐧𝐞𝐭 𝐋𝐢𝐧𝐤 𝐨𝐫 𝐀𝐧𝐲 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐚𝐛𝐥𝐞 𝐋𝐢𝐧𝐤 𝐭𝐨 𝐆𝐨𝐨𝐠𝐥𝐞 𝐃𝐫𝐢𝐯𝐞 🖤🍂...𝐀 𝐏𝐫𝐨𝐣𝐞𝐜𝐭 𝐁𝐲 𝐑𝐚𝐯𝐢𝐧𝐝𝐮 𝐃𝐞𝐬𝐡𝐚𝐧🍂
+𝗛𝗶....𝐈 𝐜𝐚𝐧 𝐔𝐩𝐥𝐨𝐚𝐝 𝐀𝐧𝐲 𝐓𝐨𝐫𝐫𝐞𝐧𝐭,𝐌𝐚𝐠𝐧𝐞𝐭 𝐋𝐢𝐧𝐤 𝐨𝐫 𝐀𝐧𝐲 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐚𝐛𝐥𝐞 𝐋𝐢𝐧𝐤 𝐭𝐨 𝐆𝐨𝐨𝐠𝐥𝐞 𝐃𝐫𝐢𝐯𝐞 🖤🍂...𝐀 𝐏𝐫𝐨𝐣𝐞𝐜𝐭 𝐁𝐲 𝐓𝐡𝐚𝐫𝐢𝐧𝐝𝐮 𝐃𝐢𝐥𝐡𝐚𝐫𝐚🍂
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("𝙼𝚢 𝙾𝚠𝚗𝚎𝚛 🖤", "https://t.me/Ravindu_Deshanz")
+    buttons.buildbutton("𝙼𝚢 𝙾𝚠𝚗𝚎𝚛 🖤", "http://t.me/Tharindu_Dilhara")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     LOGGER.info('UID: {} - UN: {} - MSG: {}'.format(update.message.chat.id, update.message.chat.username, update.message.text))
     uptime = get_readable_time((time.time() - botStartTime))
@@ -208,7 +208,7 @@ def main():
     if os.path.isfile(".restartmsg"):
         with open(".restartmsg") as f:
             chat_id, msg_id = map(int, f)
-        bot.edit_message_text("𝗥𝗲𝘀𝘁𝗮𝗿𝘁 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹 🌟..𝗡𝗼𝘄 𝗬𝗼𝘂 𝗖𝗮𝗻 𝘂𝘀𝗲 𝗠𝗲 🍂⚒.. 𝗠𝗮𝗶𝗻𝘁𝗲𝗻𝗮𝗻𝗰𝗲 𝗕𝘆 𝗥𝗮𝘃𝗶𝗻𝗱𝘂 𝗗𝗲𝘀𝗵𝗮𝗻 🖤", chat_id, msg_id)
+        bot.edit_message_text("𝗥𝗲𝘀𝘁𝗮𝗿𝘁 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹 🌟..𝗡𝗼𝘄 𝗬𝗼𝘂 𝗖𝗮𝗻 𝘂𝘀𝗲 𝗠𝗲 🍂⚒.. 𝗠𝗮𝗶𝗻𝘁𝗲𝗻𝗮𝗻𝗰𝗲 𝗕𝘆 𝐓𝐡𝐚𝐫𝐢𝐧𝐝𝐮 𝐃𝐢𝐥𝐡𝐚𝐫𝐚 🖤", chat_id, msg_id)
         os.remove(".restartmsg")
     bot.set_my_commands(botcmds)
 
